@@ -1,0 +1,83 @@
+% 2021-2022 Project handbook, by Lee Davison.
+
+% The front page was stolen from a package completely unintended for this use, and so needed a bit of reverse engineering. It's not recommended you do this or try to edit any of the options.
+
+
+
+% Documentation for front page:
+% https://github.com/martinhelso/mnfrontpage
+
+\documentclass[a4paper, british, article]{memoir}
+% Add [final] to remove marginal notes
+
+\usepackage{style}       % Custom style
+\usepackage{mnfrontpage} % Front page
+\usepackage{kantlipsum}  % Dummy text
+\usepackage{tabularx}    % Tables
+\usepackage{tcolorbox}   % Shoutboxes
+\usepackage{pdflscape}   % Big table
+
+\title{Media Technology Project Handbook}
+\subtitle{Full time, final year, undergraduate students}
+\author{MED601}
+\kind{For use in academic year \hfill 2021-22} % Optional
+
+
+\includeonly
+{
+    sections/abstract,
+    % sections/acknowledgements,
+    sections/introduction,
+    sections/LearningOutcomes,
+    sections/Operation,
+    sections/ProjectSelection,
+    sections/ProjectPhases,
+    sections/appendixA,
+    sections/appendixB,
+}
+
+% Options & tweaks
+
+\parindent 0pt          % Removes the paragraph indent. It's technically less ambiguous, I just don't like it. Don't look at me like that, we all have weird issues. 
+\parskip 10pt           
+
+\begin{document}
+
+    \frontmatter        % Folios in Roman numerals, unnumbered chapters.
+
+    \mnfrontpage
+
+    \include{sections/abstract}
+    % \include{sections/acknowledgements}
+
+
+    \microtypesetup{protrusion = false}
+    \tableofcontents*    % Or \tableofcontents*
+
+    \listoffigures      % Or \listoffigures*
+
+    \listoftables       % Or \listoftables*
+    \microtypesetup{protrusion = true}
+
+    \mainmatter         % Folios in Arabic numerals, numbered chapters.
+
+    \include{sections/introduction}
+
+    % \part{The First Part}
+
+    \include{sections/LearningOutcomes}
+    \include{sections/Operation}
+    \include{sections/ProjectSelection}
+    \include{sections/ProjectPhases}
+
+    \appendix           % "Chapter" is renamed "Appendix"
+    \appendixpage       % Similar to \part*{Appendices}, but appears in TOC.
+
+    \include{sections/appendixA}
+    \include{sections/appendixB}
+
+    \backmatter         % Folios in Arabic numerals, unnumbered chapters.
+
+    % \printbibliography
+
+\end{document}
