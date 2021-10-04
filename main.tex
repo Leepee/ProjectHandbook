@@ -10,12 +10,37 @@
 \documentclass[a4paper, british, article, hidelinks]{memoir}
 % Add [final] to remove marginal notes
 
-\usepackage{style}       % Custom style
-\usepackage{mnfrontpage} % Front page
-\usepackage{kantlipsum}  % Dummy text
-\usepackage{tabularx}    % Tables
-\usepackage{tcolorbox}   % Shoutboxes
-\usepackage{pdflscape}   % Big table
+\usepackage{style}          % Custom style
+\usepackage{mnfrontpage}    % Front page
+\usepackage{kantlipsum}     % Dummy text
+\usepackage{tabularx}       % Tables
+\usepackage{tcolorbox}      % Shoutboxes
+\usepackage{pdflscape}      % Big table
+\usepackage{mdframed}       % Form boxes
+\usepackage{hyperref}       % Used for fillable PDF boxes
+\usepackage{linegoal}       % Boxes that go to the end of the line
+
+\newcommand{\MyFormX}[2][1.0cm]{% 
+    % \begin{mdframed}[style=MyFormStyle]% 
+    {\noindent\footnotesize#2}\\% 
+    \TextField[format={var f =f.textFont = 'Verdana';f.strokeColor     =['T'];f.fillColor=['T']}, width=\linewidth, height=#1, charsize=10pt]{ }% 
+    % \end{mdframed}% 
+}
+
+\mdfdefinestyle{MyFormStyle}{%
+    linewidth=1.5pt,
+    skipbelow=\topskip,
+    skipabove=\topskip
+}
+
+\newcommand{\MyForm}[2][1.0cm]{%
+    \begin{mdframed}[style=MyFormStyle]%
+    {\noindent\footnotesize#2}\vspace{#1}%
+    \end{mdframed}%
+}
+
+
+
 
 \title{Media Technology Project Handbook}
 \subtitle{Full time, final year, undergraduate students}
@@ -33,6 +58,7 @@
     sections/ProjectSelection,
     sections/ProjectPhases,
     sections/Assessment,
+    sections/Supervision,
     sections/appendixA,
     sections/appendixB,
 }
@@ -71,6 +97,7 @@
     \include{sections/ProjectSelection}
     \include{sections/ProjectPhases}
     \include{Sections/Assessment}
+    \include{Sections/Supervision.tex}
 
     \appendix           % "Chapter" is renamed "Appendix"
     \appendixpage       % Similar to \part*{Appendices}, but appears in TOC.
