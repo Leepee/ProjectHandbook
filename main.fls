@@ -1,6 +1,6 @@
-PWD d:\Prog\LaTeX\ProjectHandbook
+PWD c:\Dev\Latex\ProjectHandbook
 INPUT C:\Users\leepe\AppData\Local\MiKTeX\miktex\data\le\pdftex\pdflatex.fmt
-INPUT d:\Prog\LaTeX\ProjectHandbook\main.tex
+INPUT c:\Dev\Latex\ProjectHandbook\main.tex
 OUTPUT main.log
 INPUT C:\Users\leepe\AppData\Local\Programs\MiKTeX\tex\latex\memoir\memoir.cls
 INPUT C:\Users\leepe\AppData\Local\Programs\MiKTeX\tex\latex\memoir\memoir.cls
