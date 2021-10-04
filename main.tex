@@ -7,7 +7,7 @@
 % Documentation for front page:
 % https://github.com/martinhelso/mnfrontpage
 
-\documentclass[a4paper, british, article]{memoir}
+\documentclass[a4paper, british, article, hidelinks]{memoir}
 % Add [final] to remove marginal notes
 
 \usepackage{style}       % Custom style
@@ -32,13 +32,14 @@
     sections/Operation,
     sections/ProjectSelection,
     sections/ProjectPhases,
+    sections/Assessment,
     sections/appendixA,
     sections/appendixB,
 }
 
 % Options & tweaks
 
-\parindent 0pt          % Removes the paragraph indent. It's technically less ambiguous, I just don't like it. Don't look at me like that, we all have weird issues. 
+\parindent 0pt          % Removes the paragraph indent. It's technically less ambiguous, I just don't like it. Don't look at me like that, we all have weird kinks. 
 \parskip 10pt           
 
 \begin{document}
@@ -69,6 +70,7 @@
     \include{sections/Operation}
     \include{sections/ProjectSelection}
     \include{sections/ProjectPhases}
+    \include{Sections/Assessment}
 
     \appendix           % "Chapter" is renamed "Appendix"
     \appendixpage       % Similar to \part*{Appendices}, but appears in TOC.
