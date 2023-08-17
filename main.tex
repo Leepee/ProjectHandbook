@@ -1,8 +1,6 @@
-% 2021-2022 Project handbook, by Lee Davison.
+% Media Technology Project handbook, by Lee Davison.
 
 % The front page was stolen from a package completely unintended for this use, and so needed a bit of reverse engineering. It's not recommended you do this or try to edit any of the options.
-
-
 
 % Documentation for front page:
 % https://github.com/martinhelso/mnfrontpage
@@ -19,6 +17,7 @@
 \usepackage{mdframed}       % Form boxes
 \usepackage{hyperref}       % Used for fillable PDF boxes
 \usepackage{linegoal}       % Boxes that go to the end of the line
+\usepackage{afterpage}      % Blank page at end of document
 
 \newcommand{\MyFormX}[2][1.0cm]{% 
     % \begin{mdframed}[style=MyFormStyle]% 
@@ -26,6 +25,13 @@
     \TextField[format={var f =f.textFont = 'Verdana';f.strokeColor     =['T'];f.fillColor=['T']}, width=\linewidth, height=#1, charsize=10pt]{ }% 
     % \end{mdframed}% 
 }
+
+%   Blank page setup to add at the end of document
+\newcommand\blankpage{%
+    \null
+    \thispagestyle{empty}%
+    \addtocounter{page}{-1}%
+    \newpage}
 
 \mdfdefinestyle{MyFormStyle}{%
     linewidth=1.5pt,
@@ -39,14 +45,10 @@
     \end{mdframed}%
 }
 
-
-
-
 \title{Media Technology Project Handbook}
 \subtitle{Full time, final year, undergraduate students}
-\author{MED601}
-\kind{For use in academic year \hfill 2021-22} % Optional
-
+\author{CTE600}
+\kind{For use in academic year \hfill 2023-24} % Optional
 
 \includeonly
 {
@@ -61,11 +63,12 @@
     sections/Supervision,
     sections/appendixA,
     sections/appendixB,
+    sections/appendixC,
 }
 
 % Options & tweaks
 
-\parindent 0pt          % Removes the paragraph indent. It's technically less ambiguous, I just don't like it. Don't look at me like that, we all have weird kinks. 
+\parindent 0pt          % Removes the paragraph indent. It's technically less ambiguous, I just don't like it. Don't look at me like that, we all have wierd kinks. 
 \parskip 10pt           
 
 \begin{document}
@@ -78,7 +81,6 @@
 
     \include{sections/abstract}
     % \include{sections/acknowledgements}
-
 
     \microtypesetup{protrusion = false}
     \tableofcontents*    % Or \tableofcontents*
@@ -98,17 +100,22 @@
     \include{sections/Operation}
     \include{sections/ProjectSelection}
     \include{sections/ProjectPhases}
-    \include{Sections/Assessment}
-    \include{Sections/Supervision.tex}
+    \include{sections/Assessment}
+    \include{sections/Supervision}
 
     \appendix           % "Chapter" is renamed "Appendix"
     \appendixpage       % Similar to \part*{Appendices}, but appears in TOC.
 
     \include{sections/appendixA}
     \include{sections/appendixB}
+    \include{sections/appendixC}
 
     \backmatter         % Folios in Arabic numerals, unnumbered chapters.
 
-    % \printbibliography
+    % \newpage 
+    % \ % Empty page
+    % \newpage
+
+    \afterpage{\blankpage}
 
 \end{document}
